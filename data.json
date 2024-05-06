@@ -1,0 +1,64 @@
+{
+    "proyek": {
+      "ringkasan": {
+        "nama": "Proyek Pengembangan Aplikasi Web",
+        "deskripsi": "Pengembangan aplikasi web untuk manajemen proyek.",
+        "manajer_proyek": "John Doe",
+        "tim_proyek": [
+          "Alice Johnson",
+          "Bob Smith",
+          "Charlie Brown"
+        ]
+      },
+      "kemajuan": {
+        "status": "Dalam Proses",
+        "persentase_selesai": 65,
+        "tugas_selesai": [
+          "Desain Antarmuka Pengguna",
+          "Pembuatan Database",
+          "Pengembangan Backend"
+        ],
+        "tugas_berikutnya": [
+          "Pengujian Aplikasi",
+          "Deployment"
+        ]
+      },
+      "anggaran": {
+        "total_anggaran": 15000000,
+        "anggaran_digunakan": 9750000,
+        "sisa_anggaran": 5250000
+      },
+      "timeline": {
+        "tanggal_mulai": "2024-01-15",
+        "tanggal_selesai": "2024-06-15",
+        "milestone": [
+          {
+            "tanggal": "2024-02-15",
+            "deskripsi": "Selesai Fase Desain"
+          },
+          {
+            "tanggal": "2024-04-01",
+            "deskripsi": "Selesai Fase Pengembangan"
+          }
+        ]
+      },
+      "sumber_daya": {
+        "perangkat_keras": [
+          "Server Web",
+          "Database Server",
+          "Server Pengujian"
+        ],
+        "perangkat_lunak": [
+          "IDE untuk Pengembangan",
+          "Perangkat Pengujian Otomatis",
+          "Sistem Manajemen Proyek"
+        ],
+        "tim_teknis": [
+          "Pengembang Frontend",
+          "Pengembang Backend",
+          "Pengembang Database"
+        ]
+      }
+    }
+  }
+  

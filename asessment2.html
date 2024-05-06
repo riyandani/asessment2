@@ -1,0 +1,68 @@
+<html>
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Data Table</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h2>Pemantauan Proyek</h2>
+    <table id="dataTable" border="1">
+        <tr>
+            <th>Ringkasan Proyek</th>
+            <th>Kemajuan Anggaran</th>
+            <th>Proses Timeline</th>
+        </tr>
+    </table>
+
+    <script>
+        // Fungsi untuk mengambil data dari server dan menampilkan dalam tabel
+        function loadData() {
+            $.ajax({
+                url: 'data.php', // File PHP yang menampilkan data dalam JSON
+                method: 'GET',
+                success: function(response) {
+                    // Bersihkan tabel sebelum menambahkan data baru
+                    $('#dataTable').find('tr:gt(0)').remove();
+
+                    // Menambahkan data ke dalam tabel
+                    response.forEach(function(item) {
+                        $('#dataTable').append(`
+                            <tr>
+                                <td>${item.id}</td>
+                                <td>${item.nama}</td>
+                                <td><button onclick="hapusData(${item.id})">Hapus</button></td>
+                            </tr>
+                        `);
+                    });
+                },
+                error: function(error) {
+                    console.error('Error fetching data:', error);
+                }
+            });
+        }
+
+        // Fungsi untuk menghapus data
+        function hapusData(id) {
+            $.ajax({
+                url: `hapus.php?id=${id}`,
+                method: 'GET',
+                success: function(response) {
+                    // Setelah berhasil menghapus data, muat ulang data
+                    loadData();
+                },
+                error: function(error) {
+                    console.error('Error deleting data:', error);
+                }
+            });
+        }
+
+        // Muat data saat halaman pertama kali diakses
+        $(document).ready(function() {
+            loadData();
+        });
+    </script>
+</body>
+</html>
+
+</html>
